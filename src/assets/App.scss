@@ -1,0 +1,153 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap");
+@import url("./webfonts/zid.css");
+/* -----------------------------------
+    - General Styles
+------------------------------------*/
+::selection {
+  background-color: rgba(141, 93, 167, 0.8);
+  color: white;
+}
+
+* {
+  outline-color: #8d5da7 !important;
+}
+
+*,
+body {
+  font-family: "Cairo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #5b4665;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.boxy-style {
+  background-color: rgba(176, 129, 201, 0.25);
+  color: #8c5da7;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+a {
+  color: #45a787;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #36836a;
+}
+
+p {
+  font-weight: 600;
+}
+
+.ul,
+.ol {
+  padding: 0 20px;
+  margin: 0 0 15px;
+}
+
+.ul li,
+.ol li {
+  position: relative;
+  font-size: 14px;
+  color: #736884;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.ul li .ul,
+.ol li .ul {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.child-inline > * {
+  display: inline-block;
+}
+
+.btn-menu-toggle .toggle-icon .icon-shape {
+  position: relative;
+  width: 80%;
+  height: 2px;
+  top: 0;
+  background-color: #8d5ba7;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-menu-toggle .toggle-icon .icon-shape:before {
+  content: "";
+  position: absolute;
+  width: 125%;
+  height: 100%;
+  right: -25%;
+  top: 7px;
+  background-color: #8d5ba7;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-menu-toggle .toggle-icon .icon-shape:after {
+  content: "";
+  position: absolute;
+  width: 125%;
+  height: 100%;
+  right: -25%;
+  top: 14px;
+  background-color: #8d5ba7;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-menu-toggle:hover .toggle-icon .icon-shape,
+.btn-menu-toggle:focus .toggle-icon .icon-shape {
+  width: 100%;
+}
+
+.btn-menu-toggle:hover .toggle-icon .icon-shape:before,
+.btn-menu-toggle:focus .toggle-icon .icon-shape:before {
+  width: 100%;
+  right: 0%;
+}
+
+.btn-menu-toggle:hover .toggle-icon .icon-shape:after,
+.btn-menu-toggle:focus .toggle-icon .icon-shape:after {
+  width: 100%;
+  right: 0%;
+}
+@media (max-width: 768px) {
+  .btn-menu-toggle .toggle-icon .icon-shape {
+    background-color: #fff;
+  }
+
+  .btn-menu-toggle .toggle-icon .icon-shape:before,
+  .btn-menu-toggle .toggle-icon .icon-shape:after {
+    background-color: #fff;
+  }
+}
