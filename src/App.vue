@@ -34,7 +34,14 @@ export default {
   font-family: "Josefin Sans", sans-serif;
   transition: padding-right 0.4s;
   &.showNav {
-    padding-right: 300px;
+    padding-right: 248px;
+  }
+}
+@media (max-width: 768px) {
+  #page-content-wrapper {
+    &.showNav {
+      padding-right: 200px;
+    }
   }
 }
 </style>

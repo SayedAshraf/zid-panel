@@ -12,5 +12,5 @@ export default {
 
 <style lang="sass" scoped>
 .PaymentOption
-  height: 550px
+  height: 650px
 </style>

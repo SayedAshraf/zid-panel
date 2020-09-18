@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$SidebarWidth: 300px;
+$SidebarWidth: 248px;
 
 .AppSidebar {
   width: $SidebarWidth;
@@ -54,6 +54,11 @@ $SidebarWidth: 300px;
         text-decoration: none;
       }
     }
+  }
+}
+@media (max-width: 768px) {
+  .AppSidebar {
+    max-width: 200px;
   }
 }
 </style>

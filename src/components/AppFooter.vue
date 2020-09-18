@@ -2,7 +2,9 @@
   <div id="footer" class="container-fluid">
     <div class="row">
       <div class="col">
-        <div class="copyright"> Copyright <b>Zid App</b> © 2016-2020
+        <div class="copyright">
+          Copyright
+          <b>Zid App</b> © 2016-2020
         </div>
       </div>
     </div>
@@ -20,6 +22,7 @@ export default {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+  background-color: #1d1920;
 }
 
 #footer .copyright {

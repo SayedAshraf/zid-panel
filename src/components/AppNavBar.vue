@@ -1,7 +1,7 @@
 <template>
   <div id="status-bar" class="container-fluid">
     <div class="row">
-      <div class="col-3 col-md-5 col-lg-5">
+      <div class="col-3 col-md-5 col-lg-5 col-sm-3">
         <div class="time-holder">
           <button v-b-toggle.sidebar-right type="button" @click="ToggleNav" class="btn-menu-toggle">
             <div class="toggle-icon">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9 col-md-7 col-lg-7">
+      <div class="col-9 col-md-7 col-lg-7 col-sm-9">
         <div class="search-holder">
           <form>
             <input type="text" placeholder="إبحث هنا..." />
@@ -89,6 +89,77 @@ export default {
       }
     }
   }
+  .time-holder {
+    text-align: right;
+    width: 100%;
+    .time {
+      display: inline-block;
+      color: #45a787;
+      font-size: 13px;
+      font-weight: 600;
+      i {
+        color: #45a787;
+        font-size: 17px;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-right: inherit;
+        margin-left: 10px;
+      }
+    }
+  }
+  .search-holder {
+    width: 100%;
+    text-align: left;
+    form {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 321px;
+      button {
+        position: absolute;
+        border: 0;
+        background: none;
+        // right: 15px;
+        top: 50%;
+        margin-top: -8px;
+        padding: 0;
+        line-height: 0;
+        color: #8393a0;
+        right: inherit;
+        left: 15px;
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+    .btn-logout {
+      color: #626262;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 21px;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      margin-left: inherit;
+      margin-right: 21px;
+      &:hover,
+      &:focus {
+        color: #353535;
+      }
+      i {
+        color: #626262;
+        font-size: 17px;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-right: 7px;
+        margin-left: inherit;
+        -webkit-transform: scaleX(1);
+        -moz-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
 }
 
 #status-bar > .row > div[class^="col-"] {
@@ -101,38 +172,6 @@ export default {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-}
-
-#status-bar .time-holder {
-  text-align: left;
-  width: 100%;
-}
-
-#status-bar .time-holder .time {
-  display: inline-block;
-  color: #45a787;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-#status-bar .time-holder .time i {
-  color: #45a787;
-  font-size: 17px;
-  vertical-align: middle;
-  margin-top: -3px;
-  margin-right: 10px;
-}
-
-#status-bar .search-holder {
-  text-align: right;
-  width: 100%;
-}
-
-#status-bar .search-holder form {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 321px;
 }
 
 #status-bar .search-holder form ::-webkit-input-placeholder {
@@ -158,95 +197,40 @@ export default {
   font-size: 13px;
   color: #697a8f;
   outline: none;
-  padding: 7px 18px;
-  padding-right: 40px;
   width: 100%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-#status-bar .search-holder form input[type="text"]:hover,
-#status-bar .search-holder form input[type="text"]:focus {
-  background-color: #e3e4e6;
-}
-
-#status-bar .search-holder form button {
-  position: absolute;
-  border: 0;
-  background: none;
-  right: 15px;
-  top: 50%;
-  margin-top: -8px;
-  padding: 0;
-  line-height: 0;
-  color: #8393a0;
-}
-
-#status-bar .search-holder form button i {
-  font-size: 16px;
-}
-
-#status-bar .search-holder .btn-logout {
-  color: #626262;
-  font-size: 13px;
-  font-weight: 600;
-  margin-left: 21px;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-#status-bar .search-holder .btn-logout i {
-  color: #626262;
-  font-size: 17px;
-  vertical-align: middle;
-  margin-top: -3px;
-  margin-left: 7px;
-  -webkit-transform: scaleX(-1);
-  -moz-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-#status-bar .search-holder .btn-logout:hover,
-#status-bar .search-holder .btn-logout:focus {
-  color: #353535;
-}
-
-#status-bar .time-holder {
-  text-align: right;
-}
-
-#status-bar .time-holder .time i {
-  margin-right: inherit;
-  margin-left: 10px;
-}
-
-#status-bar .search-holder {
-  text-align: left;
-}
-
-#status-bar .search-holder form input[type="text"] {
+  &:hover,
+  &:focus {
+    background-color: #e3e4e6;
+  }
   padding: 7px 18px;
   padding-left: 40px;
 }
 
-#status-bar .search-holder form button {
-  right: inherit;
-  left: 15px;
+@media (max-width: 1200px) {
+  #status-bar .search-holder form {
+    max-width: 255px;
+  }
 }
-
-#status-bar .search-holder .btn-logout {
-  margin-left: inherit;
-  margin-right: 21px;
-}
-
-#status-bar .search-holder .btn-logout i {
-  margin-left: inherit;
-  margin-right: 7px;
-  -webkit-transform: scaleX(1);
-  -moz-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  transform: scaleX(1);
+@media (max-width: 768px) {
+  #status-bar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #8d5da7;
+    .time-holder {
+      .time {
+        display: none;
+        color: #fff;
+      }
+    }
+    .search-holder {
+      .btn-logout {
+        .text {
+          display: none;
+        }
+      }
+    }
+  }
 }
 </style>
