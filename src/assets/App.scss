@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  background-color: #f0f0f0;
+  background-color: #1d1920;
 }
 
 h1,
@@ -97,50 +97,46 @@ p {
   border-radius: 2px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 125%;
+    height: 100%;
+    right: -25%;
+    top: 7px;
+    background-color: #8d5ba7;
+    border-radius: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      width: 100%;
+      right: 0%;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 125%;
+    height: 100%;
+    right: -25%;
+    top: 14px;
+    background-color: #8d5ba7;
+    border-radius: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      width: 100%;
+      right: 0%;
+    }
+  }
+  &:hover,
+  &:focus {
+    width: 100%;
+  }
 }
 
-.btn-menu-toggle .toggle-icon .icon-shape:before {
-  content: "";
-  position: absolute;
-  width: 125%;
-  height: 100%;
-  right: -25%;
-  top: 7px;
-  background-color: #8d5ba7;
-  border-radius: 2px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.btn-menu-toggle .toggle-icon .icon-shape:after {
-  content: "";
-  position: absolute;
-  width: 125%;
-  height: 100%;
-  right: -25%;
-  top: 14px;
-  background-color: #8d5ba7;
-  border-radius: 2px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.btn-menu-toggle:hover .toggle-icon .icon-shape,
-.btn-menu-toggle:focus .toggle-icon .icon-shape {
-  width: 100%;
-}
-
-.btn-menu-toggle:hover .toggle-icon .icon-shape:before,
-.btn-menu-toggle:focus .toggle-icon .icon-shape:before {
-  width: 100%;
-  right: 0%;
-}
-
-.btn-menu-toggle:hover .toggle-icon .icon-shape:after,
-.btn-menu-toggle:focus .toggle-icon .icon-shape:after {
-  width: 100%;
-  right: 0%;
-}
 @media (max-width: 768px) {
   .btn-menu-toggle .toggle-icon .icon-shape {
     background-color: #fff;
@@ -151,3 +147,4 @@ p {
     background-color: #fff;
   }
 }
+

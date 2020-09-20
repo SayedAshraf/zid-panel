@@ -40,7 +40,7 @@ export default {
 @media (max-width: 768px) {
   #page-content-wrapper {
     &.showNav {
-      padding-right: 200px;
+      padding-right: 0px;
     }
   }
 }

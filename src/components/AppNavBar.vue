@@ -10,7 +10,7 @@
           </button>
           <div class="time">
             <i class="zid zid-clock"></i>
-            {{time}}
+            {{ time }}
           </div>
         </div>
       </div>
@@ -94,11 +94,11 @@ export default {
     width: 100%;
     .time {
       display: inline-block;
-      color: #45a787;
+      color: #fff;
       font-size: 13px;
       font-weight: 600;
       i {
-        color: #45a787;
+        color: #fff;
         font-size: 17px;
         vertical-align: middle;
         margin-top: -3px;
@@ -147,7 +147,7 @@ export default {
         color: #353535;
       }
       i {
-        color: #626262;
+        color: #fff;
         font-size: 17px;
         vertical-align: middle;
         margin-top: -3px;
@@ -157,6 +157,9 @@ export default {
         -moz-transform: scaleX(1);
         -ms-transform: scaleX(1);
         transform: scaleX(1);
+      }
+      .text {
+        color: #fff;
       }
     }
   }
@@ -191,7 +194,8 @@ export default {
 }
 
 #status-bar .search-holder form input[type="text"] {
-  background-color: #f0f1f2;
+  background-color: #4d435c;
+  color: #d4cce0;
   border: 0;
   border-radius: 50px;
   font-size: 13px;

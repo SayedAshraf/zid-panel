@@ -10,19 +10,62 @@
         </div>
         <!-- Sidbar Body -->
         <div class="sidebar-body">
-            <ul class="main-menu" v-for="(item , indexi) in items" :key="indexi">
-                <li><a :data-toggle="item.collapse" :href="item.href" class="collapsed"><i :class="['zid', `zid-${item.icon}`]"></i>{{item.text}}</a>
-                    <div class="collapse" :id="item.id">
-                        <ul class="sub-menu" v-for="(sub , indexj ) in item.submenu" :key="indexj">
-                            <li>
-                              <router-link :to="sub.to">{{sub.text}}</router-link>
-                              </li>
+            <ul class="main-menu">
+                <li><router-link to=""><i class="zid zid-home"></i>الرئيسية</router-link></li>
+                <li><router-link to=""><i class="zid zid-pie-chart"></i>التقارير</router-link></li>
+                <li><a data-toggle="collapse" href="#menu-item1" class="collapsed"><i class="zid zid-basket"></i>الطلبات</a>
+                    <div class="collapse" id="menu-item1">
+                        <ul class="sub-menu">
+                            <li><router-link to="">الطلبات</router-link></li>
+                            <li><router-link to="">إنشاء طلب</router-link></li>
+                            <li><router-link to="">المسودات</router-link></li>
+                            <li><router-link to="">رسائل حالات الطلبات</router-link></li>
                         </ul>
                     </div>
                 </li>
-                <li v-if="item.show">
-                  <button id="btn-mode" class="btn-mode"><i class="zid zid-mode"></i><span class="text">واجهة ليلية</span></button>
+                <li><a data-toggle="collapse" href="#menu-item2" class="collapsed"><i class="zid zid-apps"></i>المنتجات</a>
+                    <div class="collapse" id="menu-item2">
+                        <ul class="sub-menu">
+                            <li><router-link to="">جميع المنتجات</router-link></li>
+                            <li><router-link to="">تصنيفات المنتجات</router-link></li>
+                        </ul>
+                    </div>
                 </li>
+                <li><a data-toggle="collapse" href="#menu-item3" class="collapsed"><i class="zid zid-dart-board"></i>التسويق</a>
+                    <div class="collapse" id="menu-item3">
+                        <ul class="sub-menu">
+                            <li><router-link to="">قسائم التخفيض</router-link></li>
+                            <li><router-link to="">الخصومات التلقائية</router-link></li>
+                            <li><router-link to="">حملات الرسائل النصية</router-link></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><router-link to=""><i class="zid zid-user"></i>العملاء</router-link></li>
+                <li><a data-toggle="collapse" href="#menu-item4" class="collapsed"><i class="zid zid-viral"></i>منظومة زد</a>
+                    <div class="collapse" id="menu-item4">
+                        <ul class="sub-menu">
+                            <li><router-link to="">الشحن والتوصيل</router-link></li>
+                            <li><router-link to="/">الدفع</router-link></li>
+                            <li><router-link to="">إدارة الطلبات والعمليات</router-link></li>
+                            <li><router-link to="">التصوير</router-link></li>
+                            <li><router-link to="">التصميم</router-link></li>
+                            <li><router-link to="">التغليف</router-link></li>
+                            <li><router-link to="">مساحات العمل المشتركة</router-link></li>
+                            <li><router-link to="">خدمات أخرى</router-link></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><router-link to="#"><i class="zid zid-users"></i>فريق العمل</router-link></li>
+                <li><router-link to=""><i class="zid zid-cogwheel"></i>الإعدادات</router-link></li>
+                <li><a data-toggle="collapse" href="#menu-item5" class="collapsed"><i class="zid zid-options"></i>خيارات الواجهة</a>
+                    <div class="collapse" id="menu-item5">
+                        <ul class="sub-menu">
+                            <li><router-link to="">تخصيص</router-link></li>
+                            <li><router-link to="">صفحات إضافية</router-link></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><button id="btn-mode" class="btn-mode"><i class="zid zid-mode"></i>واجهة ليلية</button></li>
             </ul>
         </div>
     </div>
@@ -32,163 +75,8 @@
 <script>
 export default {
   name: "Sidebar",
-    data() {
-    return {
-      items: [
-        {
-          text: "الرئيسية",
-          to: "",
-          icon:'home',
-        },
-        {
-          text: "التقارير",
-          to: "",
-          icon:'pie-chart',
-        },
-        {
-          text: "الطلبات",
-          to: "",
-          icon:'basket',
-          href: "#menu-item1",
-          id:"menu-item1",
-          collapse:"collapse",
-          submenu:[ 
-            {
-              text: "الطلبات",
-              to: "",
-              },
-              {
-                text: "إنشاء طلب",
-                to: "",
-              },
-              {
-                text: "المسودات",
-                to: "",
-              },
-              {
-                text: "رسائل حالات الطلبات",
-                to: "",
-              },
-          ],
-        },
-        {
-          text: "المنتجات",
-          to: "",
-          icon:'apps',
-          href: "#menu-item2",
-          id:"menu-item2",
-          collapse:"collapse",
-          submenu:[ 
-            {
-                text: "جميع المنتجات",
-                to: "",
-              },
-              {
-                text: "تصنيفات المنتجات",
-                to: "",
-              }
-          ],
-        },
-        {
-          text: "التسويق",
-          to: "",
-          icon:'apps',
-          href: "#menu-item3",
-          id:"menu-item3",
-          collapse:"collapse",
-          submenu:[ 
-            {
-                text:"قسائم التخفيض",
-                to: "",
-              },
-              {
-                text: "الخصومات التلقائية",
-                to: "",
-              },
-              {
-                text: "حملات الرسائل النصية",
-                to: "",
-              }
-          ],
-        },
-        {
-          text:"العملاء",
-          to:"",
-          icon:"user"
-        },
-        {
-          text: "منظومة زد",
-          to: "",
-          icon:'viral',
-          href: "#menu-item4",
-          id:"menu-item4",
-          collapse:"collapse",
-          submenu:[ 
-            {
-                text:"الشحن والتوصيل",
-                to: "",
-            },
-            {
-                text:"الدفع",
-                to: "/",
-            },
-            {
-                text:"إدارة الطلبات والعمليات",
-                to: "",
-            },
-            {
-                text:"التصوير",
-                to: "",
-            },
-            {
-                text:"التصميم",
-                to: "",
-            },
-            {
-                text:"التغليف",
-                to: "",
-            },
-            {
-                text:"مساحات العمل المشتركة",
-                to: "",
-            },
-            {
-                text:"خدمات أخرى",
-                to: "",
-            },
-          ],
-        },
-        {
-          text:"فريق العمل",
-          to:"",
-          icon:"users"
-        },
-        {
-          text:"الإعدادات",
-          to:"",
-          icon:"cogwheel"
-        },
-        {
-          text: "خيارات الواجهة",
-          to: "",
-          icon:'apps',
-          href: "#menu-item5",
-          id:"menu-item5",
-          collapse:"collapse",
-          submenu:[ 
-              {
-                text:"تخصيص",
-                to: "",
-              },
-              {
-                text: "صفحات إضافية",
-                to: "",
-              },
-          ],
-          show:true
-        },
-      ]
-    };
+  data() {
+    return {};
   }
 };
 </script>
@@ -309,7 +197,6 @@ $SidebarWidth: 248px;
         & > li {
           margin-bottom: 10px;
           text-align: right;
-          cursor: pointer;
           & > a {
             position: relative;
             display: inline-block;
@@ -367,7 +254,7 @@ $SidebarWidth: 248px;
             text-decoration: none;
             font-size: 13px;
             font-weight: bold;
-            padding: 18px 30px;
+            padding: 18px 20px;
             border: 0;
             text-align: left;
             outline: none;
@@ -398,7 +285,6 @@ $SidebarWidth: 248px;
                     left: 0.6rem;
                     -webkit-transition: all 0.3s ease;
                     transition: all 0.3s ease;
-                    
                   }
                 }
               }
@@ -410,9 +296,6 @@ $SidebarWidth: 248px;
                     }
                   }
                 }
-              }
-              .text{
-                  padding: 0 15px;
               }
             }
           }
